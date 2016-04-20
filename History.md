@@ -1,4 +1,9 @@
 
+1.0.4 / 2016-04-20
+==================
+
+  * Add an identify call Calls setUserId on the Piwik spec and fixes T910
+
 1.0.3 / 2015-06-30
 ==================
 
