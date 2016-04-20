@@ -82,6 +82,22 @@ describe('Piwik', function() {
       });
     });
 
+    describe('#identify', function() {
+      beforeEach(function() {
+        analytics.stub(window._paq, 'push');
+      });
+
+      it('should not send an identify call without a user id', function() {
+        analytics.identify();
+        analytics.didNotCall(window._paq.push);
+      });
+
+      it('should send an identify call with the user id', function() {
+        analytics.identify(5000);
+        analytics.called(window._paq.push, ['setUserId', '5000']);
+      });
+    });
+
     describe('#track', function() {
       beforeEach(function() {
         analytics.stub(window._paq, 'push');
