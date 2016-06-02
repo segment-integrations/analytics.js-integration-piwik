@@ -1,8 +1,9 @@
+'use strict';
 
-var Analytics = require('analytics.js-core').constructor;
-var integration = require('analytics.js-integration');
-var sandbox = require('clear-env');
-var tester = require('analytics.js-integration-tester');
+var Analytics = require('@segment/analytics.js-core').constructor;
+var integration = require('@segment/analytics.js-integration');
+var sandbox = require('@segment/clear-env');
+var tester = require('@segment/analytics.js-integration-tester');
 var Piwik = require('../lib/');
 
 describe('Piwik', function() {
@@ -145,14 +146,14 @@ describe('Piwik', function() {
         analytics.track('event',
           { prop: true },
           { integrations: {
-              Piwik: {
-                cvar: {
-                  1: ['UserId', '6116'],
-                  2: ['SubscriptionId', ''],
-                  3: ['PlanName', 'ENTERPRISE']
-                }
+            Piwik: {
+              cvar: {
+                1: ['UserId', '6116'],
+                2: ['SubscriptionId', ''],
+                3: ['PlanName', 'ENTERPRISE']
               }
             }
+          }
           }
         );
         analytics.called(window._paq.push, ['setCustomVariable', '1', 'UserId', '6116', 'page']);
@@ -164,14 +165,14 @@ describe('Piwik', function() {
         analytics.track('event',
           { prop: true },
           { integrations: {
-              Piwik: {
-                customVars: {
-                  1: ['UserId', '6116'],
-                  2: ['SubscriptionId', ''],
-                  3: ['PlanName', 'ENTERPRISE']
-                }
+            Piwik: {
+              customVars: {
+                1: ['UserId', '6116'],
+                2: ['SubscriptionId', ''],
+                3: ['PlanName', 'ENTERPRISE']
               }
             }
+          }
           }
         );
         analytics.called(window._paq.push, ['setCustomVariable', '1', 'UserId', '6116', 'page']);
@@ -198,18 +199,18 @@ describe('Piwik', function() {
         analytics.track('event',
           { prop: true },
           { integrations: {
-              Piwik: {
-                customVars: {
-                  1: ['UserId', '6116'],
-                  2: ['SubscriptionId', ''],
-                  3: ['PlanName', 'ENTERPRISE'],
-                  4: ['New', 'item'],
-                  5: ['LastVariable', '0824'],
-                  6: ['TooManyVars', 'OhNo'],
-                  7: ['ThisIsntAThing', 'Apples']
-                }
+            Piwik: {
+              customVars: {
+                1: ['UserId', '6116'],
+                2: ['SubscriptionId', ''],
+                3: ['PlanName', 'ENTERPRISE'],
+                4: ['New', 'item'],
+                5: ['LastVariable', '0824'],
+                6: ['TooManyVars', 'OhNo'],
+                7: ['ThisIsntAThing', 'Apples']
               }
             }
+          }
           }
         );
         analytics.called(window._paq.push, ['setCustomVariable', '1', 'UserId', '6116', 'page']);
@@ -226,18 +227,18 @@ describe('Piwik', function() {
         analytics.track('event',
           { prop: true },
           { integrations: {
-              Piwik: {
-                customVars: {
-                  1: ['UserId', '6116'],
-                  2: ['SubscriptionId', ''],
-                  3: ['PlanName', 'ENTERPRISE'],
-                  4: ['New', 'item'],
-                  5: ['LastVariable', '0824'],
-                  6: ['TooManyVars', 'OhNo'],
-                  7: ['ThisIsntAThing', 'Apples']
-                }
+            Piwik: {
+              customVars: {
+                1: ['UserId', '6116'],
+                2: ['SubscriptionId', ''],
+                3: ['PlanName', 'ENTERPRISE'],
+                4: ['New', 'item'],
+                5: ['LastVariable', '0824'],
+                6: ['TooManyVars', 'OhNo'],
+                7: ['ThisIsntAThing', 'Apples']
               }
             }
+          }
           }
         );
         analytics.called(window._paq.push, ['setCustomVariable', '1', 'UserId', '6116', 'page']);
